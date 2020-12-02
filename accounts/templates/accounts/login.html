@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Harta</a>
+  </li>
+</ul>
+<div class="row justify-content-center align-items-center">
+<form method="post">
+    {% csrf_token %}
+    {% if login_error %}
+    {{ login_error }}
+    {% endif %}
+    <br>
+    <br>
+    <h>Username</h> {{ form.username }}
+    <br>
+    <br>
+    <h>Password</h> {{ form.password }}
+    <br>
+    <br>
+    <input type="submit" name="" value="Login">
+    </form>
+</div>

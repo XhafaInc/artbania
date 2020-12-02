@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+  .biography{
+    width:75%;
+    height:75%;
+    padding-right:10%;
+  }
+  .short{
+    width:30%;
+    height:50%;
+    float:right;
+  }
+  h6{
+    padding-right:0.5%;
+  }
+</style>
+</head>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Harta</a>
+  </li>
+</ul>
+<center>
+  <div class="short">
+    <img src="{{artist_object.image.url}}">
+    <br><br>
+    <h6>Ditelindja:{{date_of_birth}}</h6>
+    {% if date_of_death %}
+    <h6>Vdiq:{{date_of_death}}</h6>
+    {% endif %}
+    <h6>Vendlindja:{{artist_object.city}}</h6>
+    <br>
+    <h6>Veprat:</h6>
+    {%for act in artist_object.acts.all %}
+      <h6>{{act}}</h6>
+    {% endfor %}
+  </div>
+<div class='biography'>
+<h3>{{artist_object.name}} {{artist_object.last_name}}</h3>
+<p>{{artist_object.biography}}</p>
+</div>
+</center>

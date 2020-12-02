@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link disabled" href="/administration">Administration</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="/accounts/logout">Logout</a>
+  </li>
+</ul>
+{% if acts_error %}
+{{acts_error}}
+{% else %}
+<center>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+Name {{artist_form.name}}
+<br><br>
+Lastname {{artist_form.last_name}}
+<br><br>
+Image {{artist_form.image}}
+<br><br>
+Biography {{artist_form.biography}}
+<br><br>
+City {{artist_form.city}}
+<br><br>
+Art {{artist_form.art}}
+<br><br>
+Acts {{artist_form.acts}}
+<br><br>
+Date of Birth {{artist_form.date_of_birth}}
+<br><br>
+Date of Death {{artist_form.date_of_death}}
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</center>
+{% endif %}

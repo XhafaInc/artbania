@@ -1,0 +1,10 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div class="list-group">
+<center>
+{% for link in links %}
+<a href="{{link}}" class="list-group-item list-group-item-action">{{link.capitalize}}</a>
+{% endfor %}
+</center>
+</div>
